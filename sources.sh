@@ -6,14 +6,13 @@ Taper le numéro de l'option que vous souhaitez sélectionner :
 1/ Installation de la sources.list
 
 2/ Réparation de la sources.list
-
 "
 
 #Lecture de la réponse de l utilisateur
 read mareponse
 
 #Si la reponse de l utilisateur est égal à 1 alors
-if [ $mareponse == 1]
+if [ $mareponse == '1' ]
 then
 	#Si le fichier sources.list existe alors
 	if [ -f /etc/apt/sources.list ] > /dev/null 2>&1
