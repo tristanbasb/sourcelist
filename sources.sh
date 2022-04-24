@@ -11,7 +11,7 @@ Taper le numéro de l'option que vous souhaitez sélectionner :
 "
 
 #Lecture de la réponse de l utilisateur
-* read mareponse
+"-" read mareponse
 
 #Si la reponse de l utilisateur est égal à 1 alors
 if [ $mareponse == 1 ]
