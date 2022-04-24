@@ -3,9 +3,9 @@
 echo "
 Taper le numéro de l'option que vous souhaitez sélectionner :
 
-1/ Installation de la sources.list
+1/ Installation de la sources.list.
 
-2/ Réparation de la sources.list
+2/ Réparation de la sources.list à partir d'un backup de la sources.list.
 "
 
 #Lecture de la réponse de l utilisateur
@@ -17,14 +17,18 @@ then
 	#Si le fichier sources.list existe alors
 	if [ -f /etc/apt/sources.list ] > /dev/null 2>&1
 	then
-		#Donc copier coller la sources.list pour créer un backup
-		cp /etc/apt/sources.list /etc/apt/sources.list.backup
 
 	else
 		#Sinon création d'un fichier sources.list
 		touch /etc/apt/sources.list
 
 	fi > /dev/null 2>&1
+
+	if [ ! -f /etc/apt.sources.list ] 
+	then
+		cp /etc/apt/sources.list /etc/apt/sources.list.backup
+	
+	fi
 
 	#Permet d'écrire les lignes à ajouter dans le fichier sources.list
 	cat <<EOT >> /etc/apt/sources.list
