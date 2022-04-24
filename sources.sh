@@ -50,5 +50,3 @@ echo " "
 cat /etc/apt/sources.list
 
 echo " "
-
-if []
