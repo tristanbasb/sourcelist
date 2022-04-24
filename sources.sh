@@ -1,7 +1,7 @@
 #!bin/bash
 
 #Si le fichier sources.list existe alors
-if [ -f /etc/apt/sources.list ]
+if [ -f /etc/apt/sources.list ] > /dev/null 2>&1
 then
 	#Donc copier coller la sources.list pour créer un backup
 	cp /etc/apt/sources.list /etc/apt/sources.list.backup
@@ -11,9 +11,6 @@ else
 	touch /etc/apt/sources.list
 
 fi > /dev/null 2>&1
-
-#Vide le contenu du fichier sources.list
-> /etc/apt/sources.list
 
 #Permet d'écrire les lignes à ajouter dans le fichier sources.list
 cat <<EOT >> /etc/apt/sources.list
