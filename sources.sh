@@ -14,7 +14,7 @@ read mareponse
 #Si la reponse de l utilisateur est égal à 1 alors
 if [ $mareponse == '1' ]
 then
-		#Si le fichier sources.list existe alors
+		#Si le fichier sources.list n'existe pas alors
 		if [ ! -f /etc/apt/sources.list ] > /dev/null 2>&1
 		then
 			#Sinon création d'un fichier sources.list
@@ -22,11 +22,12 @@ then
 
 		fi > /dev/null 2>&1
 
-		if [ ! -f /etc/apt.sources.list ] 
+		#Si le fichier sources.list.backup n'existe pas alors
+		if [ ! -f /etc/apt.sources.list.backup ] 
 		then
 			cp /etc/apt/sources.list /etc/apt/sources.list.backup
 		
-		fi
+		fi > /dev/null 2>&1
 
 	#Permet d'écrire les lignes à ajouter dans le fichier sources.list
 	cat <<EOT >> /etc/apt/sources.list
