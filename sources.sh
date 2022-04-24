@@ -17,18 +17,19 @@ read mareponse
 if [ $mareponse == 1 ]
 then
 
-		#Si le fichier sources.list.backup n'existe pas alors
-		if [ ! -f /etc/apt.sources.list.backup ] 
-		then
-			cp /etc/apt/sources.list /etc/apt/sources.list.backup
-
-		fi > /dev/null 2>&1
-
 		#Si le fichier sources.list n'existe pas alors
 		if [ ! -f /etc/apt/sources.list ] > /dev/null 2>&1
 		then
 			#Sinon création d'un fichier sources.list
 			touch /etc/apt/sources.list
+
+		fi > /dev/null 2>&1
+
+		
+		#Si le fichier sources.list.backup n'existe pas alors
+		if [ ! -f /etc/apt.sources.list.backup ] 
+		then
+			cp /etc/apt/sources.list /etc/apt/sources.list.backup
 
 		fi > /dev/null 2>&1
 
@@ -110,4 +111,5 @@ if [ $mareponse == 3 ]
 then
 	echo " "
 	cat /etc/apt/sources.list
+
 fi
