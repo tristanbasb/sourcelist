@@ -30,11 +30,11 @@ then
 
 	#Permet d'écrire les lignes à ajouter dans le fichier sources.list
 	cat <<EOT >> /etc/apt/sources.list
-	deb http://deb.debian.org/debian/ bullseye main contrib non-free
-	deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-	deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-	deb http://deb.debian.org/debian/ bullseye-proposed-updates main contrib non-free
-	deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
+deb http://deb.debian.org/debian/ bullseye main contrib non-free
+deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-proposed-updates main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
 EOT
 
 	#Mise à jour de la machine et de la sources.list
@@ -74,11 +74,11 @@ then
 
 	#Permet d'écrire les lignes à ajouter dans le fichier sources.list
 	cat <<EOT >> /etc/apt/sources.list
-	deb http://deb.debian.org/debian/ bullseye main contrib non-free
-	deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-	deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-	deb http://deb.debian.org/debian/ bullseye-proposed-updates main contrib non-free
-	deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
+deb http://deb.debian.org/debian/ bullseye main contrib non-free
+deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-proposed-updates main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
 EOT
 
 	#Mise à jour de la machine et de la sources.list
