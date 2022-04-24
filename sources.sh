@@ -108,5 +108,6 @@ fi
 
 if [ $mareponse == 3 ]
 then
+	echo " "
 	cat /etc/apt/sources.list
 fi
