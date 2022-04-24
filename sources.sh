@@ -14,6 +14,13 @@ read mareponse
 #Si la reponse de l utilisateur est égal à 1 alors
 if [ $mareponse == '1' ]
 then
+		#Si le fichier sources.list n'existe pas alors
+		if [ ! -f /etc/apt/sources.list ] > /dev/null 2>&1
+		then
+			#Sinon création d'un fichier sources.list
+			touch /etc/apt/sources.list
+
+		fi > /dev/null 2>&1
 
 		#Si le fichier sources.list.backup n'existe pas alors
 		if [ ! -f /etc/apt.sources.list.backup ] 
@@ -22,13 +29,6 @@ then
 		
 		fi > /dev/null 2>&1
 
-		#Si le fichier sources.list n'existe pas alors
-		if [ ! -f /etc/apt/sources.list ] > /dev/null 2>&1
-		then
-			#Sinon création d'un fichier sources.list
-			touch /etc/apt/sources.list
-
-		fi > /dev/null 2>&1
 	#Permet d'écrire les lignes à ajouter dans le fichier sources.list
 	cat <<EOT >> /etc/apt/sources.list
 deb http://deb.debian.org/debian/ bullseye main contrib non-free
@@ -71,8 +71,6 @@ fi
 if [ $mareponse == 2 ]
 then
 	rm -r /etc/apt/sources.list
-
-	echo "$?"
 
 	cp /etc/apt/sources.list.backup /etc/apt/sources.list
 
