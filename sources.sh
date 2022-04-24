@@ -109,4 +109,4 @@ EOT
 
 	echo " "
 
-fi > /dev/null 2>&1
+fi > 
