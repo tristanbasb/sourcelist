@@ -16,7 +16,7 @@ read mareponse
 if [ $mareponse == 1]
 then
 	#Si le fichier sources.list existe alors
-	else if [ -f /etc/apt/sources.list ] > /dev/null 2>&1
+	if [ -f /etc/apt/sources.list ] > /dev/null 2>&1
 	then
 		#Donc copier coller la sources.list pour créer un backup
 		cp /etc/apt/sources.list /etc/apt/sources.list.backup
