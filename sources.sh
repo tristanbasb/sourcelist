@@ -104,6 +104,4 @@ then
 
 	echo " "
 
-	echo "Pour mettre à jour la source list de nouveau veuillez relancer le script et taper 1 pour le choix de l'option"
-
 fi
