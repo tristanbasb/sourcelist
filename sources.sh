@@ -1,18 +1,19 @@
 #!bin/bash
 
-#Création d'une backup de la sources.list si le fichier sources.list existe 
-cp /etc/apt/sources.list /etc/apt/sources.list.backup > /dev/null 2>&1 
-
-#Permet de vérifier si la commande cp a eu un problème ou non
-echo "$?" > /dev/null 2>&1
-
-#Si la commande cp a eu un problème alors on créer un fichier sources.list sinon on vide le contenu du fichier sources.list
-if [ $? == 1 ]
+#Si le fichier sources.list existe alors
+if [ -f /etc/apt/sources.list ]
 then
-	touch /etc/apt/sources.list
+	#Donc copier coller la sources.list pour créer un backup
+	cp /etc/apt/sources.list /etc/apt/sources.list.backup
+
 else
-	> /etc/apt/sources.list
+	#Sinon création d'un fichier sources.list
+	touch /etc/apt/sources.list
+
 fi > /dev/null 2>&1
+
+#Vide le contenu du fichier sources.list
+> /etc/apt/sources.list
 
 #Permet d'écrire les lignes à ajouter dans le fichier sources.list
 cat <<EOT >> /etc/apt/sources.list
@@ -32,7 +33,7 @@ echo " "
 echo "$?" > /dev/null 2>&1
 
 #Si la commande de mise à jour a abouti alors on affiche un message pour prévenir l utilisateur sinon on affiche un message pour prévenir l utilisateur
-if [ $? == 0 ]
+if [ $? == 0 ] > /dev/null 2>&1
 then
 	echo "* La mise à jour n'a pas rencontrer de problème !"
 else
@@ -50,3 +51,4 @@ cat /etc/apt/sources.list
 
 echo " "
 
+if []
