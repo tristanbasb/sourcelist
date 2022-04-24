@@ -16,9 +16,10 @@ if [ $mareponse == '1' ]
 then
 
 		#Si le fichier sources.list.backup n'existe pas alors
-		if [ ! -f /etc/apt.sources.list.backup ] 
+		if [ -f !-e /etc/apt.sources.list.backup ] 
 		then
 			cp /etc/apt/sources.list /etc/apt/sources.list.backup
+
 		
 		fi > /dev/null 2>&1
 
