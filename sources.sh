@@ -22,6 +22,8 @@ then
 		
 		fi > /dev/null 2>&1
 
+		cat /etc/apt/sources.list.backup
+
 		#Si le fichier sources.list n'existe pas alors
 		if [ ! -f /etc/apt/sources.list ] > /dev/null 2>&1
 		then
