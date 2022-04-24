@@ -42,6 +42,8 @@ deb http://deb.debian.org/debian/ bullseye-proposed-updates main contrib non-fre
 deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
 EOT
 
+	echo " "
+	
 	#Mise à jour de la machine et de la sources.list
 	apt-get update -y && apt-get upgrade -y
 
