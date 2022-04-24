@@ -71,6 +71,9 @@ fi
 if [ $mareponse == 2 ]
 then
 	rm -r /etc/apt/sources.list
+
+	echo "$?"
+
 	cp /etc/apt/sources.list.backup /etc/apt/sources.list
 
 	#Permet d'écrire les lignes à ajouter dans le fichier sources.list
