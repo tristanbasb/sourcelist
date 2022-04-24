@@ -3,16 +3,18 @@
 echo "
 Taper le numéro de l'option que vous souhaitez sélectionner :
 
-1/ Installation de la sources.list.
+1/ Installation de la sources.list
 
-2/ Réparation de la sources.list à partir d'un backup de la sources.list.
+2/ Réparation de la sources.list à partir d'un backup de la sources.list
+
+3/ Afficher la sources.list
 "
 
 #Lecture de la réponse de l utilisateur
 read mareponse
 
 #Si la reponse de l utilisateur est égal à 1 alors
-if [ $mareponse == '1' ]
+if [ $mareponse == 1 ]
 then
 
 		#Si le fichier sources.list.backup n'existe pas alors
@@ -102,4 +104,9 @@ then
 
 	echo " "
 
+fi
+
+if [ $mareponse == 3 ]
+then
+	cat /etc/apt/sources.list
 fi
