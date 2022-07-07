@@ -9,10 +9,12 @@ Choisir une option :
 "
 
 read version
+
 if [ "$version" != "10" ] && [ "$version" != "11" ]
-if [ -f "/etc/apt/sources.list" ]; 
-then
-    rm -r /etc/apt/sources.list
+    if [ -f "/etc/apt/sources.list" ]; 
+    then
+        rm -r /etc/apt/sources.list
+    fi
 fi
 
 if [ "$version" == "1" ]
