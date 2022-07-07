@@ -14,7 +14,7 @@ if [ "$version" == "1" ]
 then
     rm -r /etc/apt/sources.list
     echo "
-    eb http://deb.debian.org/debian/ buster main contrib non-free
+    deb http://deb.debian.org/debian/ buster main contrib non-free
     deb-src http://deb.debian.org/debian/ buster main contrib non-free
 
     deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
