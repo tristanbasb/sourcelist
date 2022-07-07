@@ -6,7 +6,6 @@ Choisir une option :
 1/ Debian 10
 
 2/ Debian 11
-
 "
 
 read version
