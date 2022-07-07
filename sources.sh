@@ -10,16 +10,21 @@ Choisir une option :
 
 read version
 
-if [ "$version" != "1" ] && [ "$version" != "2" ]
+if [ "$version" == "1" ] || [ "$version" == "2" ]
+then
     if [ -f "/etc/apt/sources.list" ]; 
     then
         rm -r /etc/apt/sources.list
     fi
+else 
+    echo "Cette option n'existe pas !!!"
 fi
 
 if [ "$version" == "1" ]
 then
     echo "
+    #sources.list pour Debian 10
+
     # Debian Buster, dépôt principal + paquets non libres
     deb http://deb.debian.org/debian/ buster main contrib non-free
     deb-src http://deb.debian.org/debian/ buster main contrib non-free
@@ -37,6 +42,8 @@ fi
 if [ "$version" == "2" ]
 then
     echo "
+    #sources.list pour Debian 11
+
     # Debian Bullseye, dépôt principal + paquets non libres
     deb http://deb.debian.org/debian/ bullseye main contrib non-free
     deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
