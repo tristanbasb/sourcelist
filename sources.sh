@@ -10,8 +10,8 @@ Choisir une option :
 
 read version
 
-FILE=/etc/apt/sources.list
-if [ -f "$FILE" ]; then
+if [ -f "/etc/apt/sources.list" ]; 
+then
     rm -r /etc/apt/sources.list
 fi
 
