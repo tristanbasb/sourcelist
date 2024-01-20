@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [ -f "/etc/apt/sources.list" ]; 
 then
     cp /etc/apt/sources.list /etc/apt/sources.list.old
